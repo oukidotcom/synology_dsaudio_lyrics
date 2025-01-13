@@ -10,4 +10,4 @@ You can download the .aum plugin files under GitHub Releases of this project
 To add and use the plugin go to audiostation/dsaudio web app on you dsm then parameters /lyric plugin/add the .aum file.
 lyrics can be downloaded/saved when getting song file information on DSM information/lyrics/search lyrics then save will  :
 - update mp3 in lyrics id3 tag
-- create a separate .lrc file next to the song file
+- create a separate .lrc file next to the song file in other format like flac
