@@ -62,7 +62,7 @@ class lrclib_dsaudio {
     }
 }
 
-/* LRCLIB serach results https://lrclib.net/api/search?q=beyonce
+/* LRCLIB search results https://lrclib.net/api/search?q=beyonce
 
 [
     {
