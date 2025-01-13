@@ -2,7 +2,7 @@
     "name": "lrclib_dsaudio",
     "displayname": "lrclib",
     "description": "search lyrics from lrclib.net",
-    "version": "1.0",
+    "version": "1.0.1",
     "site": "https://lrclib.net/",
     "module": "lrclib_dsaudio.php",
     "type": "lyric",
