@@ -54,7 +54,11 @@ class lrclib_dsaudio {
         if (!$obj['id']) {
             return false;
         }
-        return $obj['syncedLyrics'];
+        if (strlen($obj['syncedLyrics'])<10) {
+            return $obj['plainLyrics'];
+        } else {
+            return $obj['syncedLyrics'];
+        }
     }
 }
 
