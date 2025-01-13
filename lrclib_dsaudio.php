@@ -1,7 +1,7 @@
 <?php
 // lrclib_dsaudio plugin to retreive song lyric on your dsaudio synology application
 // alex at ouki.com
-// v1.0 11/01/2025
+// v1.0.1 13/01/2025
 class lrclib_dsaudio {
     private $apiUrl = 'https://lrclib.net/api';
     public function __construct() { } 
@@ -37,7 +37,7 @@ class lrclib_dsaudio {
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($curl, CURLOPT_ENCODING, 'gzip,deflate');
-        curl_setopt($curl, CURLOPT_USERAGENT, 'Lrclib-dsaudio/1.0');
+        curl_setopt($curl, CURLOPT_USERAGENT, 'Lrclib-dsaudio/1.0.1');
         curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 3);
         curl_setopt($curl, CURLOPT_TIMEOUT, 3);
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
