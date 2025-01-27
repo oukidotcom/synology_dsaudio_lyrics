@@ -7,9 +7,10 @@ class lrclib_dsaudio {
     public function __construct() { } 
     public function getLyricsList($artist, $title, $info) {
         $count = 0;
+        //first try with best match
         $searchUrl = sprintf(
-        "%s/search?artist_name=%s&track_name=%s",
-        $this->apiUrl, urlencode($artist), urlencode($title)
+            "%s/search?artist_name=%s&track_name=%s",
+            $this->apiUrl, urlencode($artist), urlencode($title)
         );
         $content = $this->getContent($searchUrl);
         $obj = json_decode($content, TRUE);
@@ -19,7 +20,17 @@ class lrclib_dsaudio {
                 $count++;
             }
         } else {
-            return 0;
+            //try with song title only if no results
+            $searchUrl = sprintf(
+                "%s/search?track_name=%s",
+                $this->apiUrl, urlencode($title)
+            );
+            $content = $this->getContent($searchUrl);
+            $obj = json_decode($content, TRUE);
+            foreach ($obj as $result) {
+                $info->addTrackInfoToList( $result['artistName'], $result['trackName'], $result['id'], substr($result['plainLyrics'],0,120));
+                $count++;
+            }
         }
         return $count;
     } 
